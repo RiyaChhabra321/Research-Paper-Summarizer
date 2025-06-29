@@ -49,12 +49,12 @@ This project is a web-based tool designed to automatically summarize lengthy AI 
 
 ## Team Members and Roles
 
-1. Sanaya – Project Manager & Documentation
-2. Riya – Deployment & Streamlit Engineer
-3. Yashvi – Frontend Developer
-4. Anjika – GPT-4 & LangChain Integrator
+1. Sanaya – LLM Integration Specialist & GitHub Maintainer
+2. Riya – Frontend & UI Coordinator
+3. Yashvi – Report & Documentation Lead
+4. Anjika – Research & Dataset Curator
 5. Khushboo – Backend Developer
-6. Himank – Tester & Debugger
+6. Himank – Integration & Testing Specialist
 
 
 ## Testing
