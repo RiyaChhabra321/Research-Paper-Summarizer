@@ -25,3 +25,12 @@ if __name__ == "__main__":
         with open("extracted_text.txt", "w", encoding="utf-8") as f:
             f.write(extracted_text)
         print("Text extraction complete. Saved to 'extracted_text.txt'.")
+from llm_infer import summarize_text
+summary = summarize_text(extracted_text)
+if summary:
+    with open("summary.txt", "w", encoding="utf-8") as sfile:
+        sfile.write(summary)
+    print("Summary saved to 'summary.txt'")
+else:
+    print(" Could not generate summary.")
+    
