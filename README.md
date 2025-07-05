@@ -91,4 +91,4 @@ This project is a web-based tool designed to automatically summarize lengthy AI 
   ## License
   
  **This project is for educational use only.**
->>>>>>> 6486ab3c4c7894b8e4fb1300b17ee15198c64541
+
