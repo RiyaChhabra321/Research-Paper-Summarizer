@@ -1,93 +1,132 @@
-# PDF Text Extractor Backend
+# Research Paper Summarizer
 
-This is a simple backend script using **PyMuPDF** to extract text from a PDF.
+A collaborative project that extracts and summarizes research papers using LLMs. The system is modular, team-driven, and leverages cutting-edge AI for summarization.
 
-## Requirements
+---
 
-- Python 3.x
-- PyMuPDF (`pip install -r requirements.txt`)
+## 🔹 Project Overview
 
-##  How to Use
+The **Research Paper Summarizer** is a Python-based solution that:
+- Extracts textual data from PDF research papers
+- Cleans and preprocesses the extracted text
+- Summarizes it using a large language model (Gemini 1.5 Pro)
+- Outputs both the raw and summarized content for easy consumption
 
-1. Place your PDF file in the project directory and rename it as `sample.pdf`.
-2. Run the script:
+---
 
+## 🔹 Folder Structure
+
+```
+Research-Paper-Summarizer/
+│
+├── pdf-text-extractor-backend/        # Khushboo's component
+│   ├── main.py
+│   ├── llm_infer.py
+│   ├── summary.txt
+│   ├── extracted_text.txt
+│   ├── requirements.txt
+│   ├── sample.pdf
+│   └── .env (ignored)
+│
+├── frontend/                          # Riya's component (placeholder)
+│   └── (To be added)
+│
+├── integrations/                      # Sanaya & Himank
+│   └── (Model API, backend linking)
+│
+├── datasets/                          # Anjika's component (placeholder)
+│   └── (Research paper PDFs, metadata)
+│
+├── docs/                              # Yashvi's documentation
+│   ├── architecture.md
+│   ├── methodology.md
+│   └── summary_flow.md
+│
+├── .gitignore
+└── README.md                          # You’re reading it
+```
+
+---
+
+## 🔹 Team Roles
+
+| Name      | Role                              | Responsibility                                   |
+|-----------|-----------------------------------|--------------------------------------------------|
+| Sanaya    | LLM Integration & GitHub Maintainer | Connects backend with Gemini, manages repo       |
+| Riya      | Frontend & UI Coordinator         | Will design the frontend interface               |
+| Yashvi    | Report & Documentation Lead       | Writes README, methodology, and documentation    |
+| Anjika    | Research & Dataset Curator        | Finds research papers, prepares inputs           |
+| Khushboo  | Backend Developer                 | Builds PDF extractor, text processor             |
+| Himank    | Integration & Testing Specialist  | Tests final outputs, integrates all components   |
+
+---
+
+## 🔹 Technologies Used
+
+- **Python 3.11+**
+- **Google Gemini API (gemini-1.5-pro)**
+- **PyMuPDF (PDF text extraction)**
+- **dotenv (secure API key handling)**
+- **Git/GitHub (version control & collaboration)**
+
+---
+
+## 🔹 How to Run the Backend Locally
+
+1. Clone the repo:
+```bash
+git clone https://github.com/Sanaya27/Research-Paper-Summarizer.git
+```
+
+2. Navigate to the backend folder:
+```bash
+cd Research-Paper-Summarizer/pdf-text-extractor-backend
+```
+
+3. Create and activate a virtual environment:
+```bash
+python -m venv .venv
+.venv\Scripts\activate   # for Windows
+```
+
+4. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+5. Add your API key to a `.env` file:
+```
+GOOGLE_API_KEY=your_api_key_here
+```
+
+6. Run the backend:
 ```bash
 python main.py
-=======
-#   Research Paper Summarizer
+```
 
-This project is a web-based tool designed to automatically summarize lengthy AI research papers or academic PDFs using GPT-4 via LangChain. It makes it easier for researchers and students to understand complex papers quickly.
+---
 
-## Features
+## 🔹 Contribution Guidelines
 
-- Upload research papers in PDF format
-- Extracts and summarizes content intelligently
-- Powered by LangChain + GPT-4
-- User-friendly interface built with Streamlit
-  
-## Tech Stack
+- Always pull before pushing:  
+  `git pull origin main`
 
-- **LangChain** – For prompt handling and LLM integration  
-- **PyMuPDF** – To extract text from uploaded PDFs  
-- **Streamlit** – For building the web app interface  
-- **GPT-4** – To generate meaningful, concise summaries  
+- Create a new branch if you're working on a feature:
+  ```bash
+  git checkout -b feature-branch-name
+  ```
 
+- Commit often with meaningful messages
 
+- Do **not** upload your `.env` or local PDF files to the repo
 
-## Project Structure
+---
 
-- `app.py` – Main Streamlit application  
-- `summarizer.py` – Contains GPT-4 summarization logic  
-- `pdf_reader.py` – Extracts text from uploaded PDFs  
-- `requirements.txt` – List of Python dependencies  
-- `README.md` – Project overview and documentation 
+## 🔹 License
 
+This project is MIT Licensed.
 
-## Installation
+---
 
-1. **Clone the repository**
-   
-   git clone https://github.com/your-username/research-paper-summarizer.git
-   cd research-paper-summarizer
-   
-2. **Install required packages**
-
-    pip install -r requirements.txt
-
-3. **Run the application**
-
-    streamlit run app.py
-
-## Deployment
-
-- Deploy it using Streamlit Cloud (recommended)
-- Or any Python hosting platform like Replit / PythonAnywhere
-
-## Team Members and Roles
-
-1. Sanaya – LLM Integration Specialist & GitHub Maintainer
-2. Riya – Frontend & UI Coordinator
-3. Yashvi – Report & Documentation Lead
-4. Anjika – Research & Dataset Curator
-5. Khushboo – Backend Developer
-6. Himank – Integration & Testing Specialist
-
-
-## Testing
-
-- Upload various PDFs (long, short, complex)
-- Check accuracy of summaries
-- Ensure layout works on different devices
-
-
-## Future Enhancements
-
-- Add multi-language summarization
-- Export summary as PDF or .txt
-- Add login and save history
-
-  ## License
-  
- **This project is for educational use only.**
+Let’s build something impactful, together.
 
