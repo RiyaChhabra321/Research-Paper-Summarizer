@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PDF Text Extractor Backend
 
 This is a simple backend script using **PyMuPDF** to extract text from a PDF.
