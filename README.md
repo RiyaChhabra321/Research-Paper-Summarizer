@@ -57,7 +57,7 @@ Research-Paper-Summarizer/
 | Yashvi    | Report & Documentation Lead       | Writes README, methodology, and documentation    |
 | Anjika    | Research & Dataset Curator        | Finds research papers, prepares inputs           |
 | Khushboo  | Backend Developer                 | Builds PDF extractor, text processor             |
-| Himank    | Testing Specialist  | Tests final outputs, integrates all components   |
+| Himank    | Testing Specialist                | Tests final outputs                              |
 
 ---
 
@@ -68,6 +68,8 @@ Research-Paper-Summarizer/
 - **PyMuPDF (PDF text extraction)**
 - **dotenv (secure API key handling)**
 - **Git/GitHub (version control & collaboration)**
+- **Streamlit**
+- **Streamlit Cloud**
 
 ---
 
