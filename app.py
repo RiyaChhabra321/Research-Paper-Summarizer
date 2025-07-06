@@ -1,21 +1,54 @@
 import streamlit as st
-import google.generativeai as genai
-import re
+from backend.pdf_utils import extract_text_from_pdf
+from backend.summarizer import summarize_text
 
-GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+# Page settings
+st.set_page_config(
+    page_title="AI Research Paper Summarizer", layout="centered")
+st.title("📄 AI Research Paper Summarizer (Gemini-powered)")
 
-genai.configure(api_key=GEMINI_API_KEY)
+# Upload PDF
+uploaded_file = st.file_uploader("📎 Upload a research paper (PDF)", type="pdf")
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+if uploaded_file:
+    # Save file temporarily
+    with open("temp_uploaded.pdf", "wb") as f:
+        f.write(uploaded_file.read())
+
+    # Extract text
+    extracted_text = extract_text_from_pdf("temp_uploaded.pdf")
+
+    if not extracted_text.strip():
+        st.error("⚠️ No extractable text found in the PDF. Try another file.")
+    else:
+        st.success("✅ PDF text extracted successfully!")
+
+        st.subheader("📃 Extracted Preview (first 1000 characters):")
+        st.text(extracted_text[:1000])
+
+        if st.button("🧠 Generate Summary"):
+            with st.spinner("Generating summary using Gemini..."):
+                summary = summarize_text(extracted_text[:8000])
+
+                if summary:
+                    st.subheader("📝 AI-Generated Summary")
+                    st.write(summary)
+
+                    # Optional: Download button
+                    st.download_button(
+                        label="📥 Download Summary as TXT",
+                        data=summary,
+                        file_name="summary.txt",
+                        mime="text/plain"
+                    )
+                else:
+                    st.error("❌ Failed to generate summary. Try again.")
+
+else:
+    st.info("👆 Upload a PDF file above to get started.")
 
 
-def clean_text(text):
-    cleaned = re.sub(r'\s+', ' ', text)  # Collapse spaces
-    cleaned = re.sub(r'[^\x00-\x7F]+', ' ', cleaned)  # Remove non-ASCII
-    return cleaned.strip()
+# Footer
+st.markdown("---")
+st.caption("Built with ❤️ using Streamlit & Gemini API")
 
-
-def summarize_text(text):
-    try:
-        cleaned = clean_text(text)
-        prompt = f"Summarize this academic text clearly in a few
