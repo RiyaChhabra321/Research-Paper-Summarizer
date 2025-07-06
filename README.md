@@ -53,11 +53,11 @@ Research-Paper-Summarizer/
 | Name      | Role                              | Responsibility                                   |
 |-----------|-----------------------------------|--------------------------------------------------|
 | Sanaya    | LLM Integration & GitHub Maintainer | Connects backend with Gemini, manages repo       |
-| Riya      | Frontend & UI Coordinator         | Will design the frontend interface               |
+| Riya      | Frontend & UI Coordinator +  Integration Specialist       | Will design the frontend interface,integrates all components               |
 | Yashvi    | Report & Documentation Lead       | Writes README, methodology, and documentation    |
 | Anjika    | Research & Dataset Curator        | Finds research papers, prepares inputs           |
 | Khushboo  | Backend Developer                 | Builds PDF extractor, text processor             |
-| Himank    | Integration & Testing Specialist  | Tests final outputs, integrates all components   |
+| Himank    | Testing Specialist  | Tests final outputs, integrates all components   |
 
 ---
 
