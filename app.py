@@ -1,6 +1,6 @@
 import streamlit as st
-from backend.pdf_utils import extract_text_from_pdf
-from backend.summarizer import summarize_text
+from pdf_utils import extract_text_from_pdf
+from summarizer import summarize_text
 
 # Page settings
 st.set_page_config(
