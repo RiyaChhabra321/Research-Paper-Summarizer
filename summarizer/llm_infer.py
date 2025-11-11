@@ -8,12 +8,12 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
 
 if not GOOGLE_API_KEY:
-    raise ValueError("Missing Google Gemini API key in .env file.")
+    raise ValueError("❌ Missing Google Gemini API key in .env file.")
 
-# Configure the Gemini client
+# ✅ Configure the Gemini client
 genai.configure(api_key=GOOGLE_API_KEY)
 
-# Initialize the Gemini model (you can also try gemini-1.5-flash)
+# ✅ Correct full model name (required)
 model = genai.GenerativeModel("models/gemini-1.5-flash-001")
 
 def clean_text(text):
@@ -22,20 +22,22 @@ def clean_text(text):
     return cleaned.strip()
 
 def summarize_text(text):
-    print(" Generating summary using Gemini...")
+    print("✨ Generating summary using Gemini...")
 
     try:
         cleaned = clean_text(text)
         prompt = f"Summarize this text clearly in a few sentences:\n\n{cleaned[:4000]}"
 
+        # ✅ Use the correct method
         response = model.generate_content(prompt)
 
         if response and hasattr(response, 'text'):
             return response.text
         else:
-            print("No summary returned.")
+            print("⚠️ No summary returned.")
             return None
 
     except Exception as e:
-        print("Gemini error:", e)
+        print("❌ Gemini error:", e)
         return None
+
