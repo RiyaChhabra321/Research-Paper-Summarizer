@@ -14,7 +14,7 @@ if not GOOGLE_API_KEY:
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # ✅ Correct full model name (required)
-model = genai.GenerativeModel("models/gemini-1.5-flash-001")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 def clean_text(text):
     cleaned = re.sub(r'\s+', ' ', text)  # Collapse multiple spaces
